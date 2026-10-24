@@ -14,7 +14,9 @@
   <Project Name="Ejemplo09" Path="../Estructuras-Datos-Session2/Ejemplo09/Ejemplo09.project" Active="No"/>
   <Project Name="Ejemplo10" Path="../Estructuras-Datos-Session2/Ejemplo10/Ejemplo10.project" Active="No"/>
   <Project Name="Ejemplo11" Path="../Estructuras-Datos-Session2/Ejemplo11/Ejemplo11.project" Active="No"/>
-  <Project Name="Ejemplo12" Path="../Estructuras-Datos-Session2/Ejemplo12/Ejemplo12.project" Active="Yes"/>
+  <Project Name="Ejemplo12" Path="../Estructuras-Datos-Session2/Ejemplo12/Ejemplo12.project" Active="No"/>
+  <Project Name="Parte1" Path="../PECL/Parte1/Parte1.project" Active="Yes"/>
+  <Project Name="Parte2" Path="../PECL/Parte2/Parte2.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug">
       <Environment/>
@@ -33,6 +35,9 @@
       <Project Name="Ejemplo10" ConfigName="Debug"/>
       <Project Name="Ejemplo11" ConfigName="Debug"/>
       <Project Name="Ejemplo12" ConfigName="Debug"/>
+      <Project Name="PECL" ConfigName="Debug"/>
+      <Project Name="Parte1" ConfigName="Debug"/>
+      <Project Name="Parte2" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release">
       <Environment/>
@@ -51,6 +56,9 @@
       <Project Name="Ejemplo10" ConfigName="Release"/>
       <Project Name="Ejemplo11" ConfigName="Release"/>
       <Project Name="Ejemplo12" ConfigName="Release"/>
+      <Project Name="PECL" ConfigName="Release"/>
+      <Project Name="Parte1" ConfigName="Release"/>
+      <Project Name="Parte2" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
