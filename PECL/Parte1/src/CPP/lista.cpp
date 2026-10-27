@@ -31,6 +31,8 @@ Persona Lista::eliminar()
         return Persona();
     nodo = primero;
     primero = nodo->siguiente;
+	if (primero)
+    primero->anterior = nullptr;
     p = nodo->persona;
     delete nodo;
     longitud--;
@@ -66,7 +68,7 @@ Persona Lista::eliminarMayor()
     if (aux->siguiente)
         aux->siguiente->anterior = aux->anterior;
     else
-        ultimo = aux->anterior;    
+        ultimo = aux->anterior;
     delete aux;
     return p;
 }
@@ -83,7 +85,7 @@ void Lista::mostrar()
         if (nodo->persona.getEstado())
             cout << "El paciente cuyo DNI es " << nodo->persona.getDni() << " tiene apendicitis, ";
         else
-            cout << "El paciente cuyo DNI es " << primero->persona.getDni() << " tiene hernias, ";
+            cout << "El paciente cuyo DNI es " << nodo->persona.getDni() << " tiene hernias, ";
         cout << "su ID es: " << nodo->persona.getId() << " y su habitacion asignada es: " << nodo->persona.getHabitacion() << endl;
         nodo = nodo->siguiente;
     }

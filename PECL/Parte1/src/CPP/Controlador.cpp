@@ -5,6 +5,7 @@ using namespace std;
 Controlador::Controlador()
 {
     srand(time(nullptr));
+    for (int i = 0; i < 300; i++) usado[i] = false;
     siguienteIdApendicitis = 1;
     siguienteIdHernia = 51;
 }
@@ -77,9 +78,18 @@ void Controlador::encolarPacientes()
         Persona persona = pila.eliminar();
         if (persona.getEstado())
         {
-            persona.setId(siguienteIdApendicitis);
-            persona.setHabitacion(siguienteIdApendicitis);
+            //persona.setId(siguienteIdApendicitis);
+            //persona.setHabitacion(siguienteIdApendicitis);
             siguienteIdApendicitis++;
+			persona.setId(rand() % 49 + 1);           // 1-49
+			persona.setHabitacion(rand() % 99 + 101); // 101-199
+            int id, hab;
+            do id = rand() % 49 + 1; while (usado[id]);
+            usado[id] = true;
+            do hab = rand() % 99 + 101; while (usado[hab]);
+            usado[hab] = true;
+            persona.setId(id);
+            persona.setHabitacion(hab);
             if (colaA.mostrarCantidad() <= colaB.mostrarCantidad())
             {
                 colaA.insertar(persona);
@@ -91,9 +101,18 @@ void Controlador::encolarPacientes()
         }
         else
         {
-            persona.setId(siguienteIdHernia);
-            persona.setHabitacion(siguienteIdHernia);
+            //persona.setId(siguienteIdHernia);
+            //persona.setHabitacion(siguienteIdHernia);
             siguienteIdHernia++;
+			persona.setId(rand() % 49 + 51);          // 51-99
+			persona.setHabitacion(rand() % 99 + 201); // 201-299
+            int id, hab;
+            do id = rand() % 49 + 51; while (usado[id]);
+            usado[id] = true;
+            do hab = rand() % 99 + 201; while (usado[hab]);
+            usado[hab] = true;
+            persona.setId(id);
+            persona.setHabitacion(hab);
             if (colaC.mostrarCantidad() <= colaD.mostrarCantidad())
             {
                 colaC.insertar(persona);
@@ -188,4 +207,5 @@ void Controlador::reiniciar()
     colaC.vaciarCola();
     colaD.vaciarCola();
     pila.vaciarPila();
+	for (int i = 0; i < 300; i++) usado[i] = false;
 }

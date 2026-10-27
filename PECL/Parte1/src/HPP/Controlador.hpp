@@ -43,6 +43,7 @@ class Controlador
         Lista listaHernias;
         int siguienteIdApendicitis;
         int siguienteIdHernia;
+        bool usado[300];
 };
 
 #endif
